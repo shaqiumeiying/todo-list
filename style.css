@@ -7,9 +7,9 @@ GENERAL STYLES
 
 /* Set up color variables. */
 :root {
-    --hermit-purple: #d5a3e9;
-    --dark-gray: #424242;
-    --light-gray: #bbb0b0;
+    --hermit-purple: #d9a3e9;
+    --dark-gray: #474343;
+    --light-gray: #cfc9c9;
 }
 
 html {
@@ -26,31 +26,28 @@ body {
     height: 100%;
     margin: 0;
     font-family: 'Oswald', Helvetica, sans-serif;
-    font-weight: 600;
+    font-weight: 300;
 }
 
-a{
-  text-decoration: none;
-  color: inherit;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 ul {
-    margin:0;
-    padding:0;
-
+    margin: 0;
+    padding: 0;
 }
 
 li {
     list-style: none;
-    margin: 1vw; /* viewport width */
+    margin: 1vw;
     padding: 2vw;
     padding-left: 0;
-
 }
 
 button {
     cursor: pointer;
-
 }
 
 input:focus,
@@ -94,7 +91,7 @@ END OF GENERAL STYLES
 .title-div .title {
     color: #ffffff;
     font-size: calc(1.5rem + .5vw);
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .author {
@@ -134,13 +131,13 @@ END OF GENERAL STYLES
     -webkit-appearance: none;
     appearance: none;
     background: var(--hermit-purple);
-    border-radius: 1px;
+    border-radius: 7px;
     width: 2rem;
     height: 2rem;
     border-width: 0;
     transition: all .3s linear;
     margin: 0;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 #create-item-form {
@@ -149,7 +146,7 @@ END OF GENERAL STYLES
 
 #create-item-input {
     border: none;
-    border-radius: 1;
+    border-radius: 0;
     border-bottom: 1px solid var(--dark-gray);
     max-width: 60%;
     margin-left: 1rem;
@@ -168,7 +165,7 @@ END OF GENERAL STYLES
     border: none;
     vertical-align: middle;
     background-color: transparent;
-    font-size: calc(1rem + 1vw);
+    font-size: calc(3rem + 1vw);
     margin-top: 0;
     padding: 0;
     color: var(--light-gray);
@@ -202,13 +199,13 @@ END OF GENERAL STYLES
     -webkit-appearance: none;
     appearance: none;
     background: var(--hermit-purple);
-    border-radius: 1px;
+    border-radius: 7px;
     width: 2rem;
     height: 2rem;
     border-width: 0;
     transition: all .3s linear;
     margin: 0;
-    color: rgb(255, 255, 255);
+    color: white;
     margin-right: calc(1rem + .5vw);
 }
 
@@ -240,7 +237,7 @@ END OF GENERAL STYLES
 }
 
 #delete-all-items-button {
-    background: #faafaf;
+    background: #ffa0a0;
     display: inline-block;
     padding: 0.3em 1.2em;
     margin: 0 0.1em 0.1em 0;
@@ -250,7 +247,7 @@ END OF GENERAL STYLES
     text-decoration: none;
     font-weight: 300;
     color: #ffffff;
-    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    text-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.5);
     text-align: center;
     transition: all 0.2s;
     cursor: pointer;
@@ -259,7 +256,3 @@ END OF GENERAL STYLES
 #delete-all-items-button:hover {
     border-color: rgba(255, 255, 255, 1);
 }
-
-/*
-END OF GENERAL STYLES
-*/

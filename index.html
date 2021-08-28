@@ -2,7 +2,6 @@
 <html>
 
 <head>
- 
     <title>Todo List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Import CSS stylesheet. -->
@@ -11,46 +10,36 @@
 
 <body>
     <div class="app-container">
-        <div class="title-div">
-            <span class="title">
-                <a href="#">
-                    Todo List
-                </a>
-            </span>
-
-            <span class="author">
-                <a href="https://github.com/shaqiumeiying">
-                &nbsp; Shaqiu Meiying &nbsp;
-                </a>
-            </span>
-
+            <div class="title-div">
+                <span class="title">
+                    <a href="#">
+                        Todo List
+                    </a>
+                </span>
+                <span class="author">
+                    <a href="https://github.com/shaqiumeiying">
+                        &nbsp; Shaqiu Meiying &nbsp;
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="content-div">
+            <div class="create-item-div">
+                <input id="toggle-all-items-button" class="hide" type="checkbox" onclick="controller.toggleAllItems()">
+                <form id="create-item-form">
+                    <input id="create-item-input" type="text" placeholder="Add a new item"
+                        onkeyup="view.displayTodoItems()">
+                </form>
+                <button class="delete-button" onclick="controller.clearForm()">-</button>
+                <button id="create-item-button" class="hide" onclick="controller.createItem()">+</button>
+            </div>
+            <div class="item-list-div">
+                <br>
+                <ul></ul>
+            </div>
+            <a id="delete-all-items-button" onclick="controller.deleteAllItems()">DELETE ALL</a>
         </div>
     </div>
-
-    <div class="content-div">
-        <div class="create-item-div">
-            <input id="toggle-all-items-button" class="hide"
-                type="checkbox" onclick="TODO">
-            <form id="create-item-form">
-                <input id="create-item-input" type="text"
-                    placeholder="Add a new item"
-                    onkeyup="TODO">
-            </form>
-            <button class="delete-button" onclick="TODO">
-                -
-            </button>
-            <button id="create-item-button" class="hide"
-                    onclick="TODO">
-                    +
-            </button>
-        </div>
-        <div class="item-list-div">
-            <br>
-            <ul></ul>
-        </div>
-        <a id="delete-all-items-button" onclick="TODO"> CLEAR ALL </a>
-    </div>
-
     <!-- Import JavaScript. -->
     <script src="./script.js"></script>
 </body>

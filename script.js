@@ -43,8 +43,8 @@ const model = {
         });
         return {
             numItems: numItems,
-            numDoneItems: numDoneItems
-        }
+            numDoneItems: numDoneItems,
+        };
     },
 
     /**
@@ -54,10 +54,10 @@ const model = {
     * @param {string} name - the name of the new item
     */
     createItem: function(name) {
-        if (typeof name === "string" && name.length > 0) {
+        if (typeof name === 'string' && name.length > 0) {
             this.items.push({
                 name: name,
-                done: false
+                done: false,
             });
         }
     },
@@ -132,9 +132,9 @@ const controller = {
     * and create a new todo item.
     */
     createItem: function() {
-        const createItemInput = ducument.getElementById("create-item-input");
+        const createItemInput = document.getElementById('create-item-input');
         model.createItem(createItemInput.value);
-        createItemInput.value = "";
+        createItemInput.value = '';
         view.displayTodoItems();
     },
 
@@ -174,7 +174,7 @@ const controller = {
             // update, which is incorrect.
             updateItemInput.value = model.items[id].name;
             view.displayTodoItems();
-
+        }
     },
 
     /**
@@ -197,6 +197,7 @@ const controller = {
         }
         else {
             this.deleteItem(id);
+        }
     },
 
     /**
@@ -226,6 +227,7 @@ const controller = {
         if (confirmDelete === true) {
             model.deleteAllItems();
             view.displayTodoItems();
+        }
     },
 
     /**
@@ -234,12 +236,11 @@ const controller = {
     * @param {Event} event - the event paramter that is available to event handlers
     */
     turnOnUpdatingMode: function(event) {
-        turnOnUpdatingMode: function(event) {
-            const itemLabel = event.target;
-            const updateItemInput = itemLabel.parentNode.querySelector('.update-item-input');
-            view.hideDOMElement(itemLabel);
-            view.displayDOMElement(updateItemInput);
-            updateItemInput.focus();
+        const itemLabel = event.target;
+        const updateItemInput = itemLabel.parentNode.querySelector('.update-item-input');
+        view.hideDOMElement(itemLabel);
+        view.displayDOMElement(updateItemInput);
+        updateItemInput.focus();
     },
 
     /**
@@ -351,8 +352,8 @@ const view = {
              itemLabel.classList.add('item-label');
 
              const deleteItemButton = document.createElement('button');
-             deleteItemButton.textContent = 'x';
-             deleteItemButton.className = 'x-button';
+             deleteItemButton.textContent = '-';
+             deleteItemButton.className = 'delete-button';
              deleteItemButton.addEventListener('click', (event) => (controller.deleteItem(index)));
 
 
@@ -390,19 +391,25 @@ const view = {
          }
          else {
              view.hideDOMElement(createItemButton);
+         }
+
     },
 
     /**
     * Display a DOM element.
     * @param {HTMLElement} domElement - the DOM element that you want to display
     */
-    displayDOMElement: function(domElement) {},
+    displayDOMElement: function(domElement) {
+        domElement.classList.remove('hide');
+    },
 
     /**
     * Hide a DOM element.
     * @param {HTMLElement} domElement - the DOM element that you want to hide
     */
-    hideDOMElement: function(domElement) {}
+    hideDOMElement: function(domElement) {
+        domElement.classList.add('hide');
+    }
 };
 
 view.displayTodoItems();
