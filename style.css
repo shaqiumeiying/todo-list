@@ -163,9 +163,9 @@ END OF GENERAL STYLES
 .delete-button {
     float: right;
     border: none;
-    vertical-align: middle;
+    vertical-align: right;
     background-color: transparent;
-    font-size: calc(3rem + 1vw);
+    font-size: calc(2rem + 1vw);
     margin-top: 0;
     padding: 0;
     color: var(--light-gray);
