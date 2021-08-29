@@ -25,7 +25,10 @@ const stringifiedTodoItems = `
 *
 * Instead, the DOM should be updated in controller and view.
 */
+
 const model = {
+
+
     items: JSON.parse(stringifiedTodoItems),
 
     /**
@@ -410,6 +413,10 @@ const view = {
     hideDOMElement: function(domElement) {
         domElement.classList.add('hide');
     }
+
+
 };
 
 view.displayTodoItems();
+
+

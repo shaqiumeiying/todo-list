@@ -80,6 +80,13 @@ END OF GENERAL STYLES
     text-align: center;
 }
 
+.info {
+    float: right;
+    margin-top: 0.5vw;
+    margin-right: 0.5vw;
+    }
+
+
 .title-div {
     margin: .25vw;
     padding: 20px;
@@ -90,7 +97,7 @@ END OF GENERAL STYLES
 
 .title-div .title {
     color: #ffffff;
-    font-size: calc(1.5rem + .5vw);
+    font-size: calc(1.5rem + 1.3vw);
     font-weight: 300;
 }
 
