@@ -1,7 +1,3 @@
-// Keycode for the ENTER and ESC keys.
-const ENTER_KEY = 13;
-const ESC_KEY = 27;
-
 // Initial todo items in a stringified format.
 const stringifiedTodoItems = `
     [
@@ -27,18 +23,22 @@ const stringifiedTodoItems = `
 */
 
 const model = {
-    items: JSON.parse(stringifiedTodoItems),
+    items: [],
 
     // Save the current state to local storage
     saveToLocalStorage: function() {
+        console.log('Saving to localStorage:', this.items);
         localStorage.setItem('todoItems', JSON.stringify(this.items));
     },
 
     // Load the state from local storage
     loadFromLocalStorage: function() {
         const storedItems = localStorage.getItem('todoItems');
+        console.log('Loading from localStorage:', storedItems);
         if (storedItems) {
             this.items = JSON.parse(storedItems);
+        } else {
+            this.items = JSON.parse(stringifiedTodoItems);
         }
     },
 
